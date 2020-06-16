@@ -13,7 +13,7 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        return view('restaurant/index');
+        return view('posts.index');
     }
 
     /**
@@ -49,7 +49,7 @@ class RestaurantController extends Controller
             return view('restaurant/show');
         }
         else {
-            return view('restauratn/404');
+            return view('restaurant/404');
         }
     }
 
