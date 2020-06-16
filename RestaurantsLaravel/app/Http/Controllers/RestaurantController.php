@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
@@ -13,7 +14,9 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        return view('posts.index');
+        $restaurants = \App\Restaurant::get();
+        return view('posts.index', compact('restaurants'));
+        //dd($restaurants);
     }
 
     /**
