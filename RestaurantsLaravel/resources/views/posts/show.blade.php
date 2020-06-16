@@ -9,7 +9,7 @@
             <li><strong>{{ $restaurant->country }}</strong>, 
                   {{ $restaurant->adress }}, {{ $restaurant->zipCode }} {{ $restaurant->town }}
             </li>
-            <li>Review : {{ $restaurant->review }}</li>
+            <li>Review : {{ $restaurant->review }}/10</li>
                         <li>
                               <blockquote>
                                     {{ $restaurant->description }}

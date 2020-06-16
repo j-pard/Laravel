@@ -26,7 +26,7 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        return view('restaurant/create');
+        return view('posts.create');
     }
 
     /**
@@ -37,7 +37,15 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        \App\Restaurant::create([
+            'name' => $request['name'],
+            'adress' => $request['adress'],
+            'zipCode' => $request['zipCode'],
+            'town' => $request['town'],
+            'country' => $request['country'],
+            'description' => $request['description'],
+            'review' => $request['review']
+        ]);
     }
 
     /**

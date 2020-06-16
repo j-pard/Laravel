@@ -19,3 +19,5 @@ Route::get('/restaurant', 'RestaurantController@index');
 Route::get('/restaurant/show/{id}', 'RestaurantController@show');
 
 Route::get('/restaurant/create', 'RestaurantController@create');
+
+Route::post('/restaurant/create', 'RestaurantController@store');
