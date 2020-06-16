@@ -46,14 +46,10 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id = 1)
+    public function show($id)
     {
-        if(isset($id)) {
-            return view('restaurant/show');
-        }
-        else {
-            return view('restaurant/404');
-        }
+        $restaurant = \App\Restaurant::findOrFail($id);
+        return view('posts.show', compact('restaurant'));
     }
 
     /**

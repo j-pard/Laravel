@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 // Home
 Route::get('/restaurant', 'RestaurantController@index');
 
-Route::get('/restaurant/show', 'RestaurantController@show');
+Route::get('/restaurant/show/{id}', 'RestaurantController@show');
 
 Route::get('/restaurant/create', 'RestaurantController@create');

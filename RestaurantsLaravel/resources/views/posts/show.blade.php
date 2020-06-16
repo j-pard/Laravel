@@ -1,0 +1,21 @@
+@extends('layout.app')
+
+@section('title','Ratpi Restaurants')
+
+@section('content')
+      <h2>{{ $restaurant->name }}</h2>
+
+      <ul>
+            <li><strong>{{ $restaurant->country }}</strong>, 
+                  {{ $restaurant->adress }}, {{ $restaurant->zipCode }} {{ $restaurant->town }}
+            </li>
+            <li>Review : {{ $restaurant->review }}</li>
+                        <li>
+                              <blockquote>
+                                    {{ $restaurant->description }}
+                              </blockquote>
+                        </li>
+                        <li>Last edit : {{ $restaurant->updated_at }}</li>
+      </ul>
+      
+@endsection
