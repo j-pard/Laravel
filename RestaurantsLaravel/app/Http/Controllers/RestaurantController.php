@@ -37,15 +37,17 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        \App\Restaurant::create([
-            'name' => $request['name'],
-            'adress' => $request['adress'],
-            'zipCode' => $request['zipCode'],
-            'town' => $request['town'],
-            'country' => $request['country'],
-            'description' => $request['description'],
-            'review' => $request['review']
+        $validatedData = $request->validate([
+            'name' => 'required|min:5|max:255',
+            'adress' => 'required|min:5|max:255',
+            'zipCode' => 'required|min:1|max:6',
+            'town' => 'required|min:5|max:255',
+            'country' => 'required|min:5|max:255',
+            'description' => 'max:400',
+            'review' => 'max:1',
         ]);
+
+        \App\Restaurant::create($validatedData);
     }
 
     /**
