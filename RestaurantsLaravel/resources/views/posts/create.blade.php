@@ -9,10 +9,16 @@
             display: block;
             margin: 10px;
       }
-
 </style>
+
       <h2>Add new restaurant to DB</h2>
 
+      <nav>
+            <a href="/restaurant">HOME</a>
+      </nav>
+
+
+      <!-- Create Post Form -->
       <form action="/restaurant/create" method="POST">
             {{-- Token for cross-site security --}}
             {{ csrf_field() }}
@@ -38,5 +44,4 @@
       </div>
       @endif
 
-      <!-- Create Post Form -->
 @endsection

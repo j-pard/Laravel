@@ -44,7 +44,7 @@ class RestaurantController extends Controller
             'town' => 'required|min:5|max:255',
             'country' => 'required|min:5|max:255',
             'description' => 'max:400',
-            'review' => 'max:1',
+            'review' => 'max:2',
         ]);
 
         \App\Restaurant::create($validatedData);
@@ -70,7 +70,8 @@ class RestaurantController extends Controller
      */
     public function edit($id)
     {
-        //
+        $restaurant = \App\Restaurant::findOrFail($id);
+        return view('posts.edit', compact('restaurant'));
     }
 
     /**
@@ -82,7 +83,21 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|min:5|max:255',
+            'adress' => 'required|min:5|max:255',
+            'zipCode' => 'required|min:1|max:6',
+            'town' => 'required|min:5|max:255',
+            'country' => 'required|min:5|max:255',
+            'description' => 'max:400',
+            'review' => 'max:2'
+        ]);
+
+        $restaurant = \App\Restaurant::where('id', $id)
+            ->update($validatedData);
+
+        $restaurant = \App\Restaurant::findOrFail($id);
+        return view('posts.show', compact('restaurant'));
     }
 
     /**

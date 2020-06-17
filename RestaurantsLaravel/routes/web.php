@@ -21,3 +21,7 @@ Route::get('/restaurant/show/{id}', 'RestaurantController@show');
 Route::get('/restaurant/create', 'RestaurantController@create');
 
 Route::post('/restaurant/create', 'RestaurantController@store');
+
+Route::get('/restaurant/edit/{id}', 'RestaurantController@edit');
+
+Route::patch('/restaurant/edit/{id}', 'RestaurantController@update');

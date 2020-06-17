@@ -5,6 +5,10 @@
 @section('content')
       <h2>{{ $restaurant->name }}</h2>
 
+      <nav>
+            <a href="/restaurant">HOME</a>
+      </nav>
+
       <ul>
             <li><strong>{{ $restaurant->country }}</strong>, 
                   {{ $restaurant->adress }}, {{ $restaurant->zipCode }} {{ $restaurant->town }}
