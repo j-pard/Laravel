@@ -7,7 +7,13 @@
       <title>@yield('title')</title>
 </head>
 <body>
-    
+    <style>
+          ul {
+                border-bottom: 1px solid gray;
+                margin: 10px auto;
+                padding: 10px
+          }
+    </style>
       @yield('content')
 
 </body>
