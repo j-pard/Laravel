@@ -6,7 +6,7 @@
       <h2>{{ $restaurant->name }}</h2>
 
       <nav>
-            <a href="/restaurant">HOME</a>
+            <a href="/">HOME</a>
       </nav>
 
       <ul>

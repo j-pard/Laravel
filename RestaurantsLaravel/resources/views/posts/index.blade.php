@@ -20,7 +20,7 @@
                               </blockquote>
                         </li>
                         <li>Last edit : {{ $restaurant->updated_at }}</li>
-                        <li><a href="/restaurant/show/{{ $restaurant->id }}">Show this restaurant</a></li>
+                        <li><a href="/show/{{ $restaurant->id }}">Show this restaurant</a></li>
                   </ul>
             @endforeach
 @endsection

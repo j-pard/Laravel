@@ -13,7 +13,7 @@
       <h2>{{ $restaurant->name }}</h2>
 
       <nav>
-            <a href="/restaurant">HOME</a>
+            <a href="/">HOME</a>
       </nav>
 
       <ul>
@@ -32,7 +32,7 @@
       <h3>What do you want to change ?</h3>
 
       <!-- Create Post Form -->
-      <form action="/restaurant/edit/{{ $restaurant->id }}" method="POST">
+      <form action="/edit/{{ $restaurant->id }}" method="POST">
             {{-- Token for cross-site security --}}
             {{ csrf_field() }}
             {{ method_field('PATCH') }}

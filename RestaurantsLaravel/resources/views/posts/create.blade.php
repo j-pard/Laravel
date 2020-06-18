@@ -14,12 +14,12 @@
       <h2>Add new restaurant to DB</h2>
 
       <nav>
-            <a href="/restaurant">HOME</a>
+            <a href="/">HOME</a>
       </nav>
 
 
       <!-- Create Post Form -->
-      <form action="/restaurant/create" method="POST">
+      <form action="/create" method="POST">
             {{-- Token for cross-site security --}}
             {{ csrf_field() }}
             <input type="text" name="name" id="newForm-name" placeholder="Name of the restaurant">

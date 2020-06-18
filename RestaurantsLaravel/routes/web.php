@@ -14,14 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Home
-Route::get('/restaurant', 'RestaurantController@index');
+Route::get('/', 'RestaurantController@index');
 
-Route::get('/restaurant/show/{id}', 'RestaurantController@show');
+Route::get('/show/{id}', 'RestaurantController@show');
 
-Route::get('/restaurant/create', 'RestaurantController@create');
+Route::get('/create', 'RestaurantController@create');
 
-Route::post('/restaurant/create', 'RestaurantController@store');
+Route::post('/create', 'RestaurantController@store');
 
-Route::get('/restaurant/edit/{id}', 'RestaurantController@edit');
+Route::get('/edit/{id}', 'RestaurantController@edit');
 
-Route::patch('/restaurant/edit/{id}', 'RestaurantController@update');
+Route::patch('/edit/{id}', 'RestaurantController@update');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
